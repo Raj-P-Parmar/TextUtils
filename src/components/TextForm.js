@@ -92,7 +92,7 @@ export default function TextForm(props) {
           </p>
           <p className="card-text">
             Number of words :{" "}
-            {text.split(" ").filter((word) => word.length !== 0).length}
+            {text.split(/\s+/).filter((word) => word.length !== 0).length}
           </p>
           <p className="card-text">
             Number of lines : {text.length === 0 ? 0 : text.split("\n").length}
