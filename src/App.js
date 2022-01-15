@@ -3,7 +3,7 @@ import Alert from "./components/Alert";
 import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -30,7 +30,7 @@ function App() {
   };
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <Navbar mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
         <Routes>
@@ -47,7 +47,7 @@ function App() {
           ></Route>
           <Route exact path="/about" element={<About mode={mode} />}></Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }
